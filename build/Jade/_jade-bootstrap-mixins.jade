@@ -1,3 +1,28 @@
 mixin test
   .test
     h1 This is a test
+    
+    
+    
+    
+mixin bs-html(language)
+  html(lang=#{language})
+  
+  
+  
+  
+  
+mixin bs-navbar-fixed-top(brandlink,links)
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.brand(href='#{brandlink.url}') #{brandlink.name}
+        .nav-collapse.collapse
+          ul.nav
+            each link in links
+              li.active
+                a(href='#{link.url}') #{link.name}

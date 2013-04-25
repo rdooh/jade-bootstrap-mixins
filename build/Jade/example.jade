@@ -1,2 +1,191 @@
+//- This is an example that should set up some sort of demo page
+
+//- Include the mixin library
 include _jade-bootstrap-mixins
 
+!!! 5
+html(lang='en')
+head
+  meta(charset='utf-8')
+  title Jade Bootstrap Mixins
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  //- bootstrap styles on a cdn - change if you need too 
+  link(href='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css', rel='stylesheet')
+  
+  link(href='styles/docs.css', rel='stylesheet')
+  link(href='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css', rel='stylesheet')
+  // Le HTML5 shim, for IE6-8 support of HTML5 elements 
+  //if lt IE 9
+    script(src='assets/js/html5shiv.js')
+  // Le fav and touch icons 
+  link(rel='apple-touch-icon-precomposed', sizes='144x144', href='assets/ico/apple-touch-icon-144-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  link(rel='shortcut icon', href='assets/ico/favicon.png')
+  script#gauges-tracker(type='text/javascript', async='', data-site-id='4f0dc9fef5a1f55508000013', src='//secure.gaug.es/track.js')
+  script(type='text/javascript', async='', src='http://www.google-analytics.com/ga.js')
+  script(type='text/javascript')
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-146052-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  style#holderjs-style(type='text/css')
+    .holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}
+body(data-spy='scroll', data-target='.bs-docs-sidebar', data-twttr-rendered='true')
+
+
+  // Navbar ================================================== 
+  -var brandlink = {name:'Jade Bootstrap Mixins', url:'example.com'}
+  -var links = [{name:'Link 1', url:'wexample.com'},{name:'Link 1', url:'wexample.com'}]
+  mixin bs-navbar-fixed-top(brandlink,links)
+
+
+  .jumbotron.masthead
+    .container
+      h1 Bootstrap
+      p
+        | Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+      p
+        a.btn.btn-primary.btn-large(href='assets/bootstrap.zip', onclick='_gaq.push([\'_trackEvent\', \'Jumbotron actions\', \'Download\', \'Download 2.3.1\']);') Download Bootstrap
+      ul.masthead-links
+        li
+          a(href='http://github.com/twitter/bootstrap', onclick='_gaq.push([\'_trackEvent\', \'Jumbotron actions\', \'Jumbotron links\', \'GitHub project\']);') GitHub project
+        li
+          a(href='./getting-started.html#examples', onclick='_gaq.push([\'_trackEvent\', \'Jumbotron actions\', \'Jumbotron links\', \'Examples\']);') Examples
+        li
+          a(href='./extend.html', onclick='_gaq.push([\'_trackEvent\', \'Jumbotron actions\', \'Jumbotron links\', \'Extend\']);') Extend
+        li
+          | Version 2.3.1
+  .bs-docs-social
+    .container
+      ul.bs-docs-social-buttons
+        li
+          iframe.github-btn(src='http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='100px', height='20px')
+        li
+          iframe.github-btn(src='http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='102px', height='20px')
+        li.follow-btn
+          iframe.twitter-follow-button.twitter-follow-button(allowtransparency='true', frameborder='0', scrolling='no', src='http://platform.twitter.com/widgets/follow_button.1366232305.html#_=1366899061318&id=twitter-widget-1&lang=en&screen_name=twbootstrap&show_count=true&show_screen_name=true&size=m', style='width: 236px; height: 20px;', title='Twitter Follow Button', data-twttr-rendered='true')
+        li.tweet-btn
+          iframe.twitter-share-button.twitter-count-horizontal(allowtransparency='true', frameborder='0', scrolling='no', src='http://platform.twitter.com/widgets/tweet_button.1366232305.html#_=1366899061312&count=horizontal&id=twitter-widget-0&lang=en&original_referer=http%3A%2F%2Ftwitter.github.io%2Fbootstrap%2F&related=mdo%3ACreator%20of%20Twitter%20Bootstrap&size=m&text=Bootstrap&url=http%3A%2F%2Ftwitter.github.com%2Fbootstrap%2F&via=twbootstrap', style='width: 107px; height: 20px;', title='Twitter Tweet Button', data-twttr-rendered='true')
+  .container
+    .marketing
+      h1 Introducing Bootstrap.
+      p.marketing-byline Need reasons to love Bootstrap? Look no further.
+      .row-fluid
+        .span4
+          img.marketing-img(src='assets/img/bs-docs-twitter-github.png')
+          h2 By nerds, for nerds.
+          p
+            | Built at Twitter by
+            a(href='http://twitter.com/mdo') @mdo
+            | and
+            a(href='http://twitter.com/fat') @fat
+            | , Bootstrap utilizes
+            a(href='http://lesscss.org') LESS CSS
+            | , is compiled via
+            a(href='http://nodejs.org') Node
+            | , and is managed through
+            a(href='http://github.com') GitHub
+            | to help nerds do awesome stuff on the web.
+        .span4
+          img.marketing-img(src='assets/img/bs-docs-responsive-illustrations.png')
+          h2 Made for everyone.
+          p
+            | Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via
+            a(href='./scaffolding.html#responsive') responsive CSS
+            | as well.
+        .span4
+          img.marketing-img(src='assets/img/bs-docs-bootstrap-features.png')
+          h2 Packed with features.
+          p
+            | A 12-column responsive
+            a(href='./scaffolding.html#gridSystem') grid
+            | , dozens of components,
+            a(href='./javascript.html') JavaScript plugins
+            | , typography, form controls, and even a
+            a(href='./customize.html') web-based Customizer
+            | to make Bootstrap your own.
+      hr.soften
+      h1 Built with Bootstrap.
+      p.marketing-byline
+        | For even more sites built with Bootstrap,
+        a(href='http://builtwithbootstrap.tumblr.com/', target='_blank') visit the unofficial Tumblr
+        | or
+        a(href='./getting-started.html#examples') browse the examples
+        | .
+      .row-fluid
+        ul.thumbnails.example-sites
+          li.span3
+            a.thumbnail(href='http://soundready.fm/', target='_blank')
+              img(src='assets/img/example-sites/soundready.png', alt='SoundReady.fm')
+          li.span3
+            a.thumbnail(href='http://kippt.com/', target='_blank')
+              img(src='assets/img/example-sites/kippt.png', alt='Kippt')
+          li.span3
+            a.thumbnail(href='http://www.gathercontent.com/', target='_blank')
+              img(src='assets/img/example-sites/gathercontent.png', alt='Gather Content')
+          li.span3
+            a.thumbnail(href='http://www.jshint.com/', target='_blank')
+              img(src='assets/img/example-sites/jshint.png', alt='JS Hint')
+  // Footer ================================================== 
+  footer.footer
+    .container
+      p
+        | Designed and built with all the love in the world by
+        a(href='http://twitter.com/mdo', target='_blank') @mdo
+        | and
+        a(href='http://twitter.com/fat', target='_blank') @fat
+        | .
+      p
+        | Code licensed under
+        a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+        | , documentation under
+        a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+        | .
+      p
+        a(href='http://glyphicons.com') Glyphicons Free
+        | licensed under
+        a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+        | .
+      ul.footer-links
+        li
+          a(href='http://blog.getbootstrap.com') Blog
+        li.muted ·
+        li
+          a(href='https://github.com/twitter/bootstrap/issues?state=open') Issues
+        li.muted ·
+        li
+          a(href='https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md') Changelog
+  // Le javascript ================================================== //
+     Placed at the end of the document so the pages load faster 
+  script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+  script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+
+  script(src='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
+  script(src='assets/js/holder/holder.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js')
+  
+  
+  
+  
+  
+  // Analytics ================================================== 
+  script
+    var _gauges = _gauges || [];
+    (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+    })();
