@@ -19,7 +19,7 @@
       "inputAbbreviatedPath" : "\/sass\/print.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/app\/css\/print.css",
+      "outputAbbreviatedPath" : "\/app\/styles\/print.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -42,7 +42,7 @@
       "inputAbbreviatedPath" : "\/sass\/ie.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/app\/css\/ie.css",
+      "outputAbbreviatedPath" : "\/app\/styles\/ie.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -83,7 +83,7 @@
       "inputAbbreviatedPath" : "\/sass\/screen.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/app\/css\/screen.css",
+      "outputAbbreviatedPath" : "\/app\/styles\/screen.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
